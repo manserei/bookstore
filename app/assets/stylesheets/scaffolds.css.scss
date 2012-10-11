@@ -1,4 +1,6 @@
 @import "configuration.css.scss";
+@import "compass";
+@import "susy";
 
 @mixin when-small {
   @media only screen and (max-width: 600px) {
@@ -18,22 +20,34 @@ body {
   }
 }
 
+a {
+  @include hover-link;
+  color: white;
+}
+
+#container {
+  @include container;
+  width: 960px !important;
+  max-width: 960px !important;
+}
+
 #sidebar {
-  width: $sidebar-width;
+  @include span-columns(3);
   background-color: red;
-  float: right;
 
   @include when-small {
     background-color: yellow;
   }
+
+  @include opacity(0.5);
 }
 
 #content {
-  width: 700px - $sidebar-width;
-  margin: 0 auto;
-  padding: 20px;
+  @include span-columns(9 omega);
   background-color: #c0c0c0;
   border: 1px solid #999;
+
+  @include border-radius(1em);
 }
 
 h1 {
@@ -52,16 +66,16 @@ pre {
   font-size: 11px;
 }
 
-a {
-  color: #000;
-  &:visited {
-    color: #666;
-  }
-  &:hover {
-    color: #fff;
-    background-color: #000;
-  }
-}
+// a {
+//   color: #000;
+//   &:visited {
+//     color: #666;
+//   }
+//   &:hover {
+//     color: #fff;
+//     background-color: #000;
+//   }
+// }
 
 div {
   &.field, &.actions {
