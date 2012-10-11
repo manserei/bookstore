@@ -1,0 +1,20 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @book.title
+
+%p
+  %b Author:
+  = @book.author
+
+%p
+  %b ISBN:
+  = @book.isbn
+
+%p
+  %b Released at:
+  = @book.released_at
+
+= link_to 'Edit', edit_book_path(@book)
+= link_to 'Back', books_path
