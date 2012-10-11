@@ -6,12 +6,20 @@ body {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
+
+  @media only screen and (max-width: 500px) {
+    background-color: red;
+  }
 }
 
 #sidebar {
   width: $sidebar-width;
   background-color: red;
   float: right;
+
+  @media only screen and (max-width: 500px) {
+    background-color: yellow;
+  }
 }
 
 #content {
